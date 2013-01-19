@@ -20,5 +20,5 @@
 # In particular, you can add lunch options with the add_lunch_combo
 # function: add_lunch_combo generic-eng
 
-add_lunch_combo trebon-eng
-add_lunch_combo trebon-userdebug
+add_lunch_combo geim-eng
+add_lunch_combo geim-userdebug

@@ -82,19 +82,19 @@
         <EncoderProfile quality="high" fileFormat="mp4" duration="60">
             <Video codec="m4v"
                    bitRate="3078000"
-                   width="640"
-                   height="480"
+                   width="320"
+                   height="240"
                    frameRate="30" />
 
-            <Audio codec="aac"
-                   bitRate="96000"
-                   sampleRate="16000"
+            <Audio codec="amrnb"
+                   bitRate="23450"
+                   sampleRate="8000"
                    channels="1" />
         </EncoderProfile>
 
         <EncoderProfile quality="low" fileFormat="3gp" duration="30">
             <Video codec="m4v"
-                   bitRate="256000"
+                   bitRate="161000"
                    width="176"
                    height="144"
                    frameRate="15" />

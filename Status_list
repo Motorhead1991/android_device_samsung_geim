@@ -5,7 +5,7 @@ bdaddr_read
 bluedroid
 BoardConfig.mk
 camerashutter
-device_trebon.mk
+device_geim.mk
 egl.cfg
 extract-files.sh
 init.gt-s7500.rc

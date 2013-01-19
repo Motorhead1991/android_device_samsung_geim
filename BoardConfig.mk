@@ -29,8 +29,8 @@ COPYBIT_MSM7K := true
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
-TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/trebon/recovery_kernel
-TARGET_RECOVERY_INITRC := device/samsung/trebon/recovery/recovery.rc
+TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/geim/recovery_kernel
+TARGET_RECOVERY_INITRC := device/samsung/geim/recovery/recovery.rc
 
 TARGET_BOARD_PLATFORM := msm7k
 TARGET_ARCH_VARIANT := armv7-a-neon
@@ -44,11 +44,11 @@ TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 # Removed -mtune=cortex-a5
 
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
-TARGET_BOOTLOADER_BOARD_NAME := trebon
+TARGET_BOOTLOADER_BOARD_NAME := geim
 BOARD_AVOID_DRAW_TEXTURE_EXTENSION := true
 
 # assert
-TARGET_OTA_ASSERT_DEVICE := trebon,GT-S7500
+TARGET_OTA_ASSERT_DEVICE := geim,SGH-I827
 
 TARGET_OVERLAY_ALWAYS_DETERMINES_FORMAT := true
 TARGET_USE_SOFTWARE_AUDIO_AAC := true
@@ -56,7 +56,7 @@ TARGET_USE_SOFTWARE_AUDIO_AAC := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_HAVE_BLUETOOTH_CUSTOM_HCIATTACH := true
-BOARD_CUSTOM_BLUEDROID := ../../../device/samsung/trebon/bluedroid/bluetooth.c
+BOARD_CUSTOM_BLUEDROID := ../../../device/samsung/geim/bluedroid/bluetooth.c
 BOARD_FORCE_STATIC_A2DP := true
 HAS_BCM20780 := true
 BOARD_GLOBAL_CFLAGS += -DHAS_BCM20780
@@ -79,7 +79,7 @@ BOARD_USE_SCREENCAP:= true
 BOARD_MOBILEDATA_INTERFACE_NAME:= "pdp0"
 
 # OpenGL drivers config file path
-BOARD_EGL_CFG := device/samsung/trebon/egl.cfg
+BOARD_EGL_CFG := device/samsung/geim/egl.cfg
 
 # No fallback font by default (space savings)
 #NO_FALLBACK_FONT:=true
@@ -89,7 +89,7 @@ BOARD_GPS_NEEDS_XTRA := true
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QCOM_LIBS := true
 BOARD_USES_QCOM_GPS := true
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := trebon
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := geim
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 1240
 
 BOARD_MOBILEDATA_INTERFACE_NAME = "pdp0"
@@ -99,6 +99,7 @@ BOARD_KERNEL_BASE := 0x00200000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_NAND_PAGE_SIZE := 4096 -s 128
 BOARD_PAGE_SIZE := 0x00001000
+BOARD_FORCE_RAMDISK_ADDRESS := 0X01200000
 
 TARGET_PROVIDES_LIBAUDIO := true
 
@@ -106,7 +107,7 @@ BOARD_USE_USB_MASS_STORAGE_SWITCH := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/usb_mass_storage/gadget/lun"
 BOARD_UMS_LUNFILE := "/sys/devices/platform/usb_mass_storage/lun0/file"
 
-BOARD_CUSTOM_USB_CONTROLLER := ../../device/samsung/trebon/UsbController.cpp
+BOARD_CUSTOM_USB_CONTROLLER := ../../device/samsung/geim/UsbController.cpp
 
 TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true 
 
@@ -117,7 +118,7 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 524288000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 979369984
 BOARD_FLASH_BLOCK_SIZE := 4096
 
-TARGET_RECOVERY_INITRC := device/samsung/trebon/recovery/recovery.rc
+TARGET_RECOVERY_INITRC := device/samsung/geim/recovery/recovery.rc
 BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk0p23
 BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk1p1
 BOARD_HAS_NO_MISC_PARTITON := true
@@ -129,5 +130,5 @@ BOARD_RECOVERY_HANDLES_MOUNT := true
 BOARD_HAS_DOWNLOAD_MODE := true
 BOARD_LDPI_RECOVERY := true
 
-BOARD_CUSTOM_RECOVERY_KEYMAPPING:= ../../device/samsung/trebon/recovery/recovery_ui.c
-BOARD_CUSTOM_GRAPHICS           := ../../../device/samsung/trebon/recovery/graphics.c
+BOARD_CUSTOM_RECOVERY_KEYMAPPING:= ../../device/samsung/geim/recovery/recovery_ui.c
+BOARD_CUSTOM_GRAPHICS           := ../../../device/samsung/geim/recovery/graphics.c
