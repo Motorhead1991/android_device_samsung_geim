@@ -1,4 +1,4 @@
-cm7_device_samsung_trebon
+cm7_device_samsung_geim
 =========================
 
 SGH-I827 device folder for Cyanogenmod 7

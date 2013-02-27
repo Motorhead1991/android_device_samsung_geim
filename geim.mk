@@ -28,9 +28,9 @@
 #DEVICE_PACKAGE_OVERLAYS := device/samsung/geim/overlay
 
 # Discard inherited values and use our own instead.
-#PRODUCT_NAME := geim
-#PRODUCT_DEVICE := geim
-#PRODUCT_MODEL := GT-S7500
+PRODUCT_NAME := geim
+PRODUCT_DEVICE := geim
+PRODUCT_MODEL := SGH-I827
 
 PRODUCT_PACKAGES += \
     libOmxCore \
@@ -75,8 +75,8 @@ PRODUCT_COPY_FILES += \
 
 # Init
 PRODUCT_COPY_FILES += \
-    device/samsung/geim/init.gt-s7500.rc:root/init.gt-s7500.rc \
-    device/samsung/geim/ueventd.gt-s7500.rc:root/ueventd.gt-s7500.rc \
+    device/samsung/geim/init.qcom.rc:root/init.qcom.rc \
+    device/samsung/geim/ueventd.rc:root/ueventd.rc \
     device/samsung/geim/init.emmc.rc:root/init.emmc.rc
 
 # 3d
@@ -155,7 +155,23 @@ PRODUCT_COPY_FILES += \
 #    device/samsung/geim/prebuilt/modules/recovery/rfs_fat.ko:recovery/root/lib/modules/rfs_fat.ko \
 #    device/samsung/geim/prebuilt/modules/recovery/rfs_glue.ko:recovery/root/lib/modules/rfs_glue.ko \
 #    device/samsung/geim/prebuilt/modules/recovery/sec_param.ko:recovery/root/lib/modules/sec_param.ko
-    
+
+# Graphics for recovery
+PRODUCT_COPY_FILES += \
+    bootable/recovery/res/images/icon_clockwork.png:recovery/root/res/images/icon_clockwork.png \
+    bootable/recovery/res/images/icon_error.png:recovery/root/res/images/icon_error.png \
+    bootable/recovery/res/images/icon_firmware_error.png:recovery/root/res/images/icon_firmware_error.png \
+    bootable/recovery/res/images/icon_firmware_install.png:recovery/root/res/images/icon_firmware_install.png \
+    bootable/recovery/res/images/icon_installing.png:recovery/root/res/images/icon_installing.png \
+    bootable/recovery/res/images/indeterminate1.png:recovery/root/res/images/indeterminate1.png \
+    bootable/recovery/res/images/indeterminate2.png:recovery/root/res/images/indeterminate2.png \
+    bootable/recovery/res/images/indeterminate3.png:recovery/root/res/images/indeterminate3.png \
+    bootable/recovery/res/images/indeterminate4.png:recovery/root/res/images/indeterminate4.png \
+    bootable/recovery/res/images/indeterminate5.png:recovery/root/res/images/indeterminate5.png \
+    bootable/recovery/res/images/indeterminate6.png:recovery/root/res/images/indeterminate6.png \
+    bootable/recovery/res/images/progress_empty.png:recovery/root/res/images/progress_empty.png \
+    bootable/recovery/res/images/progress_fill.png:recovery/root/res/images/progress_fill.png 
+
 #Media profile
 PRODUCT_COPY_FILES += \
     device/samsung/geim/prebuilt/media_profiles.xml:system/etc/media_profiles.xml \
