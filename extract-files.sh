@@ -29,8 +29,7 @@ mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/etc
 mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/etc/firmware
 mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/ath6k
 mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/ath6k/AR6003
-mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/ath6k/AR6003/hw2.0
-mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/wifi/ath6k/AR6003/hw2.1.1
+mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/ath6k/AR6003/hw2.1.1
 mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/cameradata
 
 # rill
@@ -98,18 +97,15 @@ adb pull /system/cameradata/datapattern_front_420sp.yuv ../../../vendor/$MANUFAC
 
 # wifi
 adb pull /system/wifi/ar6000.ko ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/wifi
-adb pull /system/wifi/ath6k/AR6003/hw2.1.1/athtcmd_ram.bin ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/ath6k/AR6003/hw2.1.1
-adb pull /system/wifi/ath6k/AR6003/hw2.1.1/athwlan.bin ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/ath6k/AR6003/hw2.1.1
-adb pull /system/wifi/ath6k/AR6003/hw2.1.1/athwlan_mobile.bin ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/ath6k/AR6003/hw2.1.1
-adb pull /system/wifi/ath6k/AR6003/hw2.1.1/athwlan_router.bin ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/ath6k/AR6003/hw2.1.1
-adb pull /system/wifi/ath6k/AR6003/hw2.1.1/athwlan_tablet.bin ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/ath6k/AR6003/hw2.1.1
-adb pull /system/wifi/ath6k/AR6003/hw2.1.1/bdata.SD31.bin ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/ath6k/AR6003/hw2.1.1
-adb pull /system/wifi/ath6k/AR6003/hw2.1.1/bdata.SD31.bin.03 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/ath6k/AR6003/hw2.1.1
-adb pull /system/wifi/ath6k/AR6003/hw2.1.1/bdata.SD31.bin.05 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/ath6k/AR6003/hw2.1.1
-adb pull /system/wifi/ath6k/AR6003/hw2.1.1/bdata.SD31.bin.07 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/ath6k/AR6003/hw2.1.1
-adb pull /system/wifi/ath6k/AR6003/hw2.1.1/data.patch.hw3_0.bin ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/ath6k/AR6003/hw2.1.1
-adb pull /system/wifi/ath6k/AR6003/hw2.1.1/device.bin ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/ath6k/AR6003/hw2.1.1
-adb pull /system/wifi/ath6k/AR6003/hw2.1.1/otp.bin ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/ath6k/AR6003/hw2.1.1
+adb pull /system/wifi/ath6k/AR6003/hw2.1.1/athtcmd_ram.bin ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/ath6k/AR6003/hw2.1.1/athtcmd_ram.bin
+adb pull /system/wifi/ath6k/AR6003/hw2.1.1/athwlan.bin ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/ath6k/AR6003/hw2.1.1/athwlan.bin
+adb pull /system/wifi/ath6k/AR6003/hw2.1.1/athwlan_mobile.bin ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/ath6k/AR6003/hw2.1.1/athwlan_mobile.bin
+adb pull /system/wifi/ath6k/AR6003/hw2.1.1/athwlan_router.bin ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/ath6k/AR6003/hw2.1.1/athwlan_router.bin
+adb pull /system/wifi/ath6k/AR6003/hw2.1.1/athwlan_tablet.bin ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/ath6k/AR6003/hw2.1.1/athwlan_tablet.bin
+adb pull /system/wifi/ath6k/AR6003/hw2.1.1/bdata.SD31.bin ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/ath6k/AR6003/hw2.1.1/bdata.SD31.bin
+adb pull /system/wifi/ath6k/AR6003/hw2.1.1/data.patch.hw3_0.bin ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/ath6k/AR6003/hw2.1.1/data.patch.hw3_0.bin
+adb pull /system/wifi/ath6k/AR6003/hw2.1.1/device.bin ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/ath6k/AR6003/hw2.1.1/device.bin
+adb pull /system/wifi/ath6k/AR6003/hw2.1.1/otp.bin ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/ath6k/AR6003/hw2.1.1/otp.bin
 adb pull /system/bin/hostapd ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/bin
 adb pull /system/bin/wlandutservice ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/bin
 adb pull /system/bin/wlan_tool ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/bin

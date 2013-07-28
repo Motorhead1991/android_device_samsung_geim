@@ -35,22 +35,16 @@ PRODUCT_MODEL := SGH-I827
 PRODUCT_PACKAGES += \
     libOmxCore \
     libOmxVidEnc \
-    FM \
     Torch \
     make_ext4fs \
-    FM \
-    rzscontrol \
-    SamsungServiceMode \
     bdaddr_read \
-    toggleshutter \
     dexpreopt \
     e2fsck \
     brcm_patchram_plus \
     copybit.geim \
     lights.geim \
     gralloc.geim \
-    setup_fs \
-    screencap
+    setup_fs 
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := device/samsung/geim/kernel
@@ -67,7 +61,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
 # proprietary side of the device
-#$(call inherit-product-if-exists, vendor/samsung/geim/geim-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/geim/geim-vendor.mk)
 
 # fstab
 PRODUCT_COPY_FILES += \
@@ -227,4 +221,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # half of the device-specific product definition file takes care
 # of the aspects that require proprietary drivers that aren't
 # commonly available
-#$(call inherit-product-if-exists, vendor/samsung/geim/geim-vendor-blobs.mk)
+$(call inherit-product-if-exists, vendor/samsung/geim/geim-vendor-blobs.mk)
