@@ -21,4 +21,4 @@
 # function: add_lunch_combo generic-eng
 
 add_lunch_combo geim-eng
-add_lunch_combo geim-userdebug
+add_lunch_combo full_geim-userdebug

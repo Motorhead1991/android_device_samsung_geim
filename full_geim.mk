@@ -27,6 +27,6 @@ $(call inherit-product, device/samsung/geim/geim.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
 # Discard inherited values and use our own instead.
-PRODUCT_NAME := geim
+PRODUCT_NAME := full_geim
 PRODUCT_DEVICE := geim
 PRODUCT_MODEL := SGH-I827
