@@ -35,6 +35,9 @@ on boot
 
     class_start default
 
+	# Force the softkey backlight on
+	write /sys/class/leds/button-backlight/brightness 255
+
 service ueventd /sbin/ueventd
     critical
 
