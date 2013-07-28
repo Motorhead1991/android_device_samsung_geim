@@ -17,34 +17,33 @@
 # build for sapphire hardware. This cleanly combines a set of
 # device-specific aspects (drivers) with a device-agnostic
 # product configuration (apps).
-#
-
-# Inherit from those products. Most specific first.
-#$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-#$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
-
-#$(call inherit-product, device/common/gps/gps_eu_supl.mk)
-
-#DEVICE_PACKAGE_OVERLAYS := device/samsung/geim/overlay
 
 # Discard inherited values and use our own instead.
 PRODUCT_NAME := geim
 PRODUCT_DEVICE := geim
 PRODUCT_MODEL := SGH-I827
 
+PRODUCT_PACKAGES := \
+	gps.sch-i827 \
+	sensors.sch-i827 \
+	lights.sch-i827 \
+	mediaserver.sch-i827 \
+	overlay.sch-i827 \
+	libexifa \
+	libjpega \
+	bdaddr_read
+
 PRODUCT_PACKAGES += \
+    libmm-omxcore \
     libOmxCore \
-    libOmxVidEnc \
-    Torch \
-    make_ext4fs \
-    bdaddr_read \
-    dexpreopt \
-    e2fsck \
-    brcm_patchram_plus \
-    copybit.geim \
-    lights.geim \
-    gralloc.geim \
-    setup_fs 
+    libOmxVenc \
+    libOmxVdec \
+    libstagefrighthw
+
+PRODUCT_PACKAGES += \
+    hciconfig \
+    hcitool \
+    libaudioutils
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := device/samsung/geim/kernel
@@ -88,8 +87,6 @@ PRODUCT_COPY_FILES += \
     device/samsung/geim/prebuilt/hostapd:system/bin/hostapd \
     device/samsung/geim/prebuilt/hostapd.conf:system/etc/wifi/hostapd.conf
     
-
-
 # Install the features available on this device.
 PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
@@ -142,34 +139,11 @@ PRODUCT_COPY_FILES += \
     device/samsung/geim/prebuilt/modules/tuner-xc2028.ko:system/lib/modules/tuner-xc2028.ko \
     device/samsung/geim/prebuilt/modules/xc5000.ko:system/lib/modules/xc5000.ko 
     
-#Kernel Modules for Recovery (RFS)
-#PRODUCT_COPY_FILES += \
-#    device/samsung/geim/prebuilt/modules/recovery/fsr.ko:recovery/root/lib/modules/fsr.ko \
-#    device/samsung/geim/prebuilt/modules/recovery/fsr_stl.ko:recovery/root/lib/modules/fsr_stl.ko \
-#    device/samsung/geim/prebuilt/modules/recovery/rfs_fat.ko:recovery/root/lib/modules/rfs_fat.ko \
-#    device/samsung/geim/prebuilt/modules/recovery/rfs_glue.ko:recovery/root/lib/modules/rfs_glue.ko \
-#    device/samsung/geim/prebuilt/modules/recovery/sec_param.ko:recovery/root/lib/modules/sec_param.ko
-
-# Graphics for recovery
-PRODUCT_COPY_FILES += \
-    bootable/recovery/res/images/icon_clockwork.png:recovery/root/res/images/icon_clockwork.png \
-    bootable/recovery/res/images/icon_error.png:recovery/root/res/images/icon_error.png \
-    bootable/recovery/res/images/icon_firmware_error.png:recovery/root/res/images/icon_firmware_error.png \
-    bootable/recovery/res/images/icon_firmware_install.png:recovery/root/res/images/icon_firmware_install.png \
-    bootable/recovery/res/images/icon_installing.png:recovery/root/res/images/icon_installing.png \
-    bootable/recovery/res/images/indeterminate1.png:recovery/root/res/images/indeterminate1.png \
-    bootable/recovery/res/images/indeterminate2.png:recovery/root/res/images/indeterminate2.png \
-    bootable/recovery/res/images/indeterminate3.png:recovery/root/res/images/indeterminate3.png \
-    bootable/recovery/res/images/indeterminate4.png:recovery/root/res/images/indeterminate4.png \
-    bootable/recovery/res/images/indeterminate5.png:recovery/root/res/images/indeterminate5.png \
-    bootable/recovery/res/images/indeterminate6.png:recovery/root/res/images/indeterminate6.png \
-    bootable/recovery/res/images/progress_empty.png:recovery/root/res/images/progress_empty.png \
-    bootable/recovery/res/images/progress_fill.png:recovery/root/res/images/progress_fill.png 
-
 #Media profile
 PRODUCT_COPY_FILES += \
     device/samsung/geim/prebuilt/media_profiles.xml:system/etc/media_profiles.xml \
     device/samsung/geim/prebuilt/audio.conf:system/etc/bluetooth/audio.conf
+
 ## keymap
 PRODUCT_COPY_FILES += \
     device/samsung/geim/keylayout/7x27a_kp.kl:system/usr/keylayout/7x27a_kp.kl \
