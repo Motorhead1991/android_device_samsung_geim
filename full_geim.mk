@@ -21,10 +21,14 @@
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-# This is where we'd set a backup provider if we had one
-#$(call inherit-product, device/sample/products/backup_overlay.mk)
 $(call inherit-product, device/samsung/geim/geim.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full.mk)
+
+# Specify phone tech before including full_phone
+$(call inherit-product, vendor/arearom/products/gsm.mk)
+
+# Inherit some common CM stuff.
+$(call inherit-product, vendor/arearom/products/common_full.mk)
 
 # Discard inherited values and use our own instead.
 PRODUCT_NAME := full_geim

@@ -1,5 +1,5 @@
 #
-# system.prop for trebon
+# system.prop for geim
 #
 rild.libpath=/system/lib/libsec-ril.so
 rild.libargs=-d /dev/smd0
